@@ -1,0 +1,21 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        }
+    },
+    "dependent_plugins": {}
+}

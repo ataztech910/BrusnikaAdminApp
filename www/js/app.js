@@ -9,11 +9,34 @@ angular.module('brusnika', ['naif.base64','ionic', 'brusnika.controllers', 'brus
 
 .run(function($ionicPlatform,$rootScope,$localStorage) {
 
+   
+
   $ionicPlatform.ready(function() {
+
+    FCMPlugin.getToken(function(token){
+        console.log(token); 
+    });
+
+    FCMPlugin.onNotification(function(data){
+    if(data.wasTapped){
+      //Notification was received on device tray and tapped by the user. 
+      alert( JSON.stringify(data) );
+    }else{
+      //Notification was received in foreground. Maybe the user needs to be notified. 
+      alert( JSON.stringify(data) );
+    }
+    });
+
+    // $ionicPush.register().then(function(t) {
+    //   return $ionicPush.saveToken(t);
+    // }).then(function(t) {
+    //   console.log('Token saved:', t.token);
+    // });  
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
 
-
+      
 
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -26,13 +49,32 @@ angular.module('brusnika', ['naif.base64','ionic', 'brusnika.controllers', 'brus
     }
 
 
+
+
+    console.log(window.device.uuid);
     // $rootScope.$apply();
   });
 })
 
 .config(function($stateProvider, $urlRouterProvider,$mdThemingProvider) {
 
-
+//  $ionicCloudProvider.init({
+//     "core": {
+//       "app_id": "308633fd"
+//     },
+//     "push": { 
+//       "sender_id": "c19zDk_XE98:APA91bF4VeK28nFKx5mwoHxthyO04IvR_XFp9CsMsRiT4JWCWo3_BuCRRporPYEaTtgGgfKWbTwYyXecKYWGFLh81nmMSuikX6fZVofh5sO2t2rlf4iG-3abT6pAsyXhidN_sL5ZqUao",
+//       "pluginConfig": {
+//         "ios": {
+//           "badge": true,
+//           "sound": true
+//         },
+//         "android": {
+//           "iconColor": "#343434"
+//         }
+//       }
+//     }
+//   });
 
   $mdThemingProvider.definePalette('amazingPaletteName', {
   '50': 'a0d228',

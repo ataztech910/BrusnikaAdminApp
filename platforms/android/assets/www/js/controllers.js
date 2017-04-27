@@ -17,6 +17,10 @@ angular.module('brusnika.controllers', [])
 //----------------------------------------------------------------------------------
 .controller('authCtrl',  function($scope,$rootScope,$http,$mdDialog,$state,$localStorage) {
 
+// $scope.$on('cloud:push:notification', function(event, data) {
+//   var msg = data.message;
+//   alert(msg.title + ': ' + msg.text);
+// });
 
   $scope.showAlert = function(ev) {
     $mdDialog.show(

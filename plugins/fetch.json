@@ -47,14 +47,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-firebase": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-firebase@0.1.20"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-fcm": {
         "source": {
             "type": "registry",
